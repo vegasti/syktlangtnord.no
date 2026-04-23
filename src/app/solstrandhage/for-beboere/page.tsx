@@ -17,27 +17,6 @@ const documents = [
   },
 ];
 
-const planlagt = [
-  {
-    title: "Avfall, retur og henteplan",
-    description:
-      "Tromsø kommunes hentekalender og praktiske tips for sortering.",
-  },
-  {
-    title: "Parkering og gjesteparkering",
-    description: "Detaljert oversikt med kart og regler for besøkende.",
-  },
-  {
-    title: "Internett og post",
-    description:
-      "Leverandøravtaler, tilkoblingsguide og info om postoppsett.",
-  },
-  {
-    title: "FAQ",
-    description: "Svar på spørsmål som går igjen i Facebook-gruppen.",
-  },
-];
-
 export default function ForBeboerePage() {
   return (
     <div className="mx-auto max-w-4xl px-6 pt-16 pb-24">
@@ -68,25 +47,6 @@ export default function ForBeboerePage() {
               </h3>
               <p className="text-sm text-foreground/70">{d.description}</p>
             </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-12">
-        <h2 className="font-serif text-2xl tracking-tight text-foreground mb-4">
-          Kommer
-        </h2>
-        <div className="grid gap-3 sm:grid-cols-2">
-          {planlagt.map((p) => (
-            <div
-              key={p.title}
-              className="rounded-lg border border-foreground/10 bg-surface/40 p-5"
-            >
-              <h3 className="font-serif text-lg tracking-tight text-foreground/60 mb-1">
-                {p.title}
-              </h3>
-              <p className="text-sm text-foreground/50">{p.description}</p>
-            </div>
           ))}
         </div>
       </section>
