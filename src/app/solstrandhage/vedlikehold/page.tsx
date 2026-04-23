@@ -50,13 +50,13 @@ export default async function VedlikeholdPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 pt-16 pb-24">
-      <p className="text-sm uppercase tracking-widest text-accent mb-4">
+      <p className="text-sm uppercase tracking-widest text-accent mb-4 animate-fade-in">
         Vedlikehold
       </p>
-      <h1 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-foreground">
+      <h1 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-foreground animate-fade-in-up">
         Vedlikehold og planer
       </h1>
-      <p className="mt-6 text-lg text-foreground/80 max-w-2xl">
+      <p className="mt-6 text-lg text-foreground/80 max-w-2xl animate-fade-in-up [animation-delay:80ms]">
         Tidslinje over hva som er gjort og hva som er planlagt. Pågående og
         planlagte tiltak vises øverst, deretter historikk med nyeste først.
       </p>

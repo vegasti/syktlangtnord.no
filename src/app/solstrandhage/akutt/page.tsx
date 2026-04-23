@@ -69,13 +69,13 @@ export default async function AkuttPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 pt-12 pb-24">
-      <p className="text-sm uppercase tracking-widest text-alert mb-4">
+      <p className="text-sm uppercase tracking-widest text-alert mb-4 animate-fade-in">
         Akutt
       </p>
-      <h1 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-foreground">
+      <h1 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-foreground animate-fade-in-up">
         Akutt og beredskap
       </h1>
-      <p className="mt-6 text-lg text-foreground/80 max-w-2xl">
+      <p className="mt-6 text-lg text-foreground/80 max-w-2xl animate-fade-in-up [animation-delay:80ms]">
         Telefonnumre og praktisk hjelp ved akutte situasjoner — uten innlogging.
       </p>
 
@@ -145,7 +145,7 @@ export default async function AkuttPage() {
           {incidents.map((i) => (
             <div
               key={i.title}
-              className="rounded-lg border border-foreground/10 bg-surface p-5"
+              className="rounded-lg border border-foreground/10 bg-surface p-5 transition-all duration-300 hover:border-accent hover:shadow-sm"
             >
               <h3 className="font-serif text-lg tracking-tight text-foreground mb-2">
                 {i.title}

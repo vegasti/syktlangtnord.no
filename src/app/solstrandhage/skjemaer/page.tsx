@@ -40,24 +40,24 @@ const forms = [
 export default function SkjemaerPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 pt-16 pb-24">
-      <p className="text-sm uppercase tracking-widest text-accent mb-4">
+      <p className="text-sm uppercase tracking-widest text-accent mb-4 animate-fade-in">
         Skjemaer
       </p>
-      <h1 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-foreground">
+      <h1 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-foreground animate-fade-in-up">
         Digitale skjemaer
       </h1>
-      <p className="mt-6 text-lg text-foreground/80">
+      <p className="mt-6 text-lg text-foreground/80 animate-fade-in-up [animation-delay:80ms]">
         Send inn til styret uten å lete etter e-postadresser. Innsendingene
         logges, og styret får varsel.
       </p>
 
-      <div className="mt-10 grid gap-3">
+      <div className="mt-10 grid gap-3 animate-fade-in-up [animation-delay:160ms]">
         {forms.map((f) =>
           f.available ? (
             <Link
               key={f.href}
               href={f.href}
-              className="block rounded-lg border border-foreground/10 bg-surface p-5 no-underline transition-colors hover:border-accent"
+              className="block rounded-lg border border-foreground/10 bg-surface p-5 no-underline transition-all duration-300 hover:border-accent hover:-translate-y-0.5 hover:shadow-md"
             >
               <h2 className="font-serif text-xl tracking-tight text-foreground mb-1">
                 {f.title}

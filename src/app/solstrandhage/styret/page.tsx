@@ -39,13 +39,13 @@ export default async function StyretPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-6 pt-16 pb-24">
-      <p className="text-sm uppercase tracking-widest text-accent mb-4">
+      <p className="text-sm uppercase tracking-widest text-accent mb-4 animate-fade-in">
         Styret
       </p>
-      <h1 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-foreground">
+      <h1 className="font-serif text-4xl sm:text-5xl leading-tight tracking-tight text-foreground animate-fade-in-up">
         Styret i Solstrand Hage sameie
       </h1>
-      <p className="mt-6 text-lg text-foreground/80 max-w-2xl">
+      <p className="mt-6 text-lg text-foreground/80 max-w-2xl animate-fade-in-up [animation-delay:80ms]">
         Styret velges av årsmøtet og har det overordnede ansvaret for sameiets
         drift, vedlikehold og HMS-arbeid.
       </p>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Header from "./Header";
 
 export const metadata: Metadata = {
   title: {
@@ -10,15 +10,6 @@ export const metadata: Metadata = {
     "Informasjon, HMS og praktisk hjelp for beboere i Solstrand hage sameie.",
 };
 
-const navLinks = [
-  { href: "/solstrandhage/akutt", label: "Akutt" },
-  { href: "/solstrandhage/hms", label: "HMS" },
-  { href: "/solstrandhage/for-beboere", label: "For beboere" },
-  { href: "/solstrandhage/vedlikehold", label: "Vedlikehold" },
-  { href: "/solstrandhage/skjemaer", label: "Skjemaer" },
-  { href: "/solstrandhage/styret", label: "Styret" },
-];
-
 export default function SolstrandLayout({
   children,
 }: Readonly<{
@@ -26,27 +17,7 @@ export default function SolstrandLayout({
 }>) {
   return (
     <div className="min-h-full flex flex-col">
-      <header className="border-b border-foreground/10 bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-          <Link
-            href="/solstrandhage"
-            className="font-serif text-xl tracking-tight no-underline text-foreground"
-          >
-            Solstrand hage sameie
-          </Link>
-          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-foreground/80 no-underline hover:text-accent"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <div className="flex-1">{children}</div>
 
