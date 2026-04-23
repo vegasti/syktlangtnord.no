@@ -10,7 +10,6 @@ const navLinks = [
   { href: "/solstrandhage/hms", label: "HMS" },
   { href: "/solstrandhage/for-beboere", label: "For beboere" },
   { href: "/solstrandhage/vedlikehold", label: "Vedlikehold" },
-  { href: "/solstrandhage/skjemaer", label: "Skjemaer" },
   { href: "/solstrandhage/styret", label: "Styret" },
 ];
 

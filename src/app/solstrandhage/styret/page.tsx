@@ -100,7 +100,7 @@ export default async function StyretPage() {
         <div className="prose prose-neutral max-w-none prose-p:text-foreground/85 prose-li:text-foreground/85 prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
           <ul>
             <li>Saker som angår fellesarealer, vedlikehold eller HMS sendes til styreleder.</li>
-            <li>Avvik kan meldes via avviksskjema på <a href="/solstrandhage/skjemaer/avvik">skjemaer-siden</a>.</li>
+            <li>Avvik kan meldes via <a href="/solstrandhage/hms/meld-avvik">avviksskjemaet under HMS</a>.</li>
             <li>Større saker som ønskes behandlet på årsmøtet meldes minst 14 dager før møtet.</li>
             <li>Styremøter holdes ca. én gang i måneden. HMS er fast punkt på dagsordenen.</li>
           </ul>

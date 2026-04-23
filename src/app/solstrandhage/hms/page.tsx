@@ -63,6 +63,26 @@ export default function HmsPage() {
         </ol>
       </nav>
 
+      <Link
+        href="/solstrandhage/hms/meld-avvik"
+        className="group mt-4 flex items-center justify-between gap-4 rounded-lg border border-accent/30 bg-accent/5 p-5 no-underline transition-all duration-300 hover:border-accent hover:bg-accent/10 hover:shadow-md animate-fade-in-up [animation-delay:200ms]"
+      >
+        <div>
+          <p className="font-serif text-lg tracking-tight text-foreground">
+            Meld avvik
+          </p>
+          <p className="text-sm text-foreground/70">
+            Hendelse, mangel eller skade — du får referansenummer for oppfølging.
+          </p>
+        </div>
+        <span
+          className="text-accent text-2xl transition-transform duration-300 group-hover:translate-x-1"
+          aria-hidden="true"
+        >
+          →
+        </span>
+      </Link>
+
       <div
         className="mt-16 prose prose-neutral max-w-none
         prose-headings:font-serif prose-headings:tracking-tight prose-headings:text-foreground

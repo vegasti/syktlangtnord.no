@@ -42,12 +42,6 @@ const quickLinks = [
     description: "Hva som er gjort, og hva som planlegges.",
   },
   {
-    href: "/solstrandhage/skjemaer",
-    title: "Skjemaer",
-    description:
-      "Meld avvik. Flere skjemaer kommer.",
-  },
-  {
     href: "/solstrandhage/styret",
     title: "Styret",
     description: "Hvem sitter i styret, og hvordan melde inn saker.",
