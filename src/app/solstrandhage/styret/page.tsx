@@ -80,9 +80,10 @@ export default async function StyretPage() {
                   {m.fields["E-post"] && (
                     <a
                       href={`mailto:${m.fields["E-post"]}`}
-                      className="no-underline hover:underline"
+                      className="no-underline hover:underline text-foreground/70"
+                      aria-label={`Send e-post til ${m.fields.Navn}`}
                     >
-                      {m.fields["E-post"]}
+                      (e-post)
                     </a>
                   )}
                 </div>
