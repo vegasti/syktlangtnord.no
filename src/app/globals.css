@@ -80,25 +80,8 @@ a:hover {
   scroll-margin-top: 5rem;
 }
 
-/* MDX tables: scroll on overflow with subtle right-edge fade */
-.prose table {
-  display: block;
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  background:
-    linear-gradient(to right, var(--surface) 30%, transparent),
-    linear-gradient(to right, transparent, var(--surface) 70%) right,
-    linear-gradient(to right, rgba(0, 0, 0, 0.06), transparent),
-    linear-gradient(to left, rgba(0, 0, 0, 0.06), transparent) right;
-  background-size: 40px 100%, 40px 100%, 14px 100%, 14px 100%;
-  background-repeat: no-repeat;
-  background-attachment: local, local, scroll, scroll;
-}
-
-.prose td, .prose th {
-  white-space: normal;
-}
+/* MDX tables: tables themselves render normally; overflow is handled
+   by a wrapper div injected via mdx-components.tsx */
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
