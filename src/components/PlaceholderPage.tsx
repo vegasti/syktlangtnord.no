@@ -38,7 +38,7 @@ export default function PlaceholderPage({
       </div>
 
       <p className="mt-10 text-sm text-foreground/60">
-        <Link href="/">← Tilbake til forsiden</Link>
+        <Link href="/solstrandhage">← Tilbake til forsiden</Link>
       </p>
     </div>
   );
