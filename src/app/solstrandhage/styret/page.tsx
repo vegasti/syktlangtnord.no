@@ -1,34 +1,42 @@
+import { listRecords } from "@/lib/airtable";
+
 export const metadata = { title: "Styret" };
+export const revalidate = 600;
 
-const board = [
-  {
-    role: "Styreleder",
-    name: "Daniel Sierra Polanco",
-    responsibility: "Overordnet HMS-ansvar, årlig gjennomgang",
-  },
-  {
-    role: "Styremedlem",
-    name: "Vegard Stien",
-    responsibility: "[Fylles inn]",
-  },
-  {
-    role: "Styremedlem",
-    name: "Kristina Torbergsen",
-    responsibility: "[Fylles inn]",
-  },
-  {
-    role: "Varamedlem",
-    name: "Simen Kristoffersen",
-    responsibility: "[Fylles inn]",
-  },
-  {
-    role: "2. vara",
-    name: "Marvin Halle Johnsen",
-    responsibility: "[Fylles inn]",
-  },
-];
+type StyretFields = {
+  Navn?: string;
+  Rolle?: "Styreleder" | "Styremedlem" | "Varamedlem" | "2. vara";
+  Ansvarsområde?: string;
+  "E-post"?: string;
+  Vises?: boolean;
+};
 
-export default function StyretPage() {
+const ROLE_ORDER: Record<string, number> = {
+  Styreleder: 0,
+  Styremedlem: 1,
+  Varamedlem: 2,
+  "2. vara": 3,
+};
+
+async function getStyret() {
+  try {
+    const records = await listRecords<StyretFields>("Styret");
+    return records
+      .filter((r) => r.fields.Vises !== false && r.fields.Navn)
+      .sort(
+        (a, b) =>
+          (ROLE_ORDER[a.fields.Rolle ?? ""] ?? 99) -
+          (ROLE_ORDER[b.fields.Rolle ?? ""] ?? 99),
+      );
+  } catch (err) {
+    console.error("Failed to load Styret:", err);
+    return [];
+  }
+}
+
+export default async function StyretPage() {
+  const board = await getStyret();
+
   return (
     <div className="mx-auto max-w-4xl px-6 pt-16 pb-24">
       <p className="text-sm uppercase tracking-widest text-accent mb-4">
@@ -46,24 +54,42 @@ export default function StyretPage() {
         <h2 className="font-serif text-2xl tracking-tight text-foreground mb-4">
           Sammensetning
         </h2>
-        <div className="rounded-lg border border-foreground/10 bg-surface overflow-hidden">
-          {board.map((m, i) => (
-            <div
-              key={m.name}
-              className={`grid sm:grid-cols-3 gap-1 sm:gap-4 px-5 py-4 ${
-                i > 0 ? "border-t border-foreground/10" : ""
-              }`}
-            >
-              <div className="text-sm text-foreground/60 sm:text-foreground/80">
-                {m.role}
+        {board.length === 0 ? (
+          <p className="text-sm text-foreground/60 italic">
+            Klarte ikke å hente styresammensetning akkurat nå.
+          </p>
+        ) : (
+          <div className="rounded-lg border border-foreground/10 bg-surface overflow-hidden">
+            {board.map((m, i) => (
+              <div
+                key={m.id}
+                className={`grid sm:grid-cols-12 gap-1 sm:gap-4 px-5 py-4 ${
+                  i > 0 ? "border-t border-foreground/10" : ""
+                }`}
+              >
+                <div className="sm:col-span-3 text-sm text-foreground/60 sm:text-foreground/80">
+                  {m.fields.Rolle}
+                </div>
+                <div className="sm:col-span-3 font-medium text-foreground">
+                  {m.fields.Navn}
+                </div>
+                <div className="sm:col-span-4 text-sm text-foreground/70">
+                  {m.fields.Ansvarsområde || "—"}
+                </div>
+                <div className="sm:col-span-2 text-sm text-right">
+                  {m.fields["E-post"] && (
+                    <a
+                      href={`mailto:${m.fields["E-post"]}`}
+                      className="no-underline hover:underline"
+                    >
+                      {m.fields["E-post"]}
+                    </a>
+                  )}
+                </div>
               </div>
-              <div className="font-medium text-foreground">{m.name}</div>
-              <div className="text-sm text-foreground/70">
-                {m.responsibility}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="mt-12">
@@ -73,7 +99,7 @@ export default function StyretPage() {
         <div className="prose prose-neutral max-w-none prose-p:text-foreground/85 prose-li:text-foreground/85 prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
           <ul>
             <li>Saker som angår fellesarealer, vedlikehold eller HMS sendes til styreleder.</li>
-            <li>Avvik kan meldes via avviksskjema på <a href="/solstrandhage/skjemaer">skjemaer-siden</a>.</li>
+            <li>Avvik kan meldes via avviksskjema på <a href="/solstrandhage/skjemaer/avvik">skjemaer-siden</a>.</li>
             <li>Større saker som ønskes behandlet på årsmøtet meldes minst 14 dager før møtet.</li>
             <li>Styremøter holdes ca. én gang i måneden. HMS er fast punkt på dagsordenen.</li>
           </ul>

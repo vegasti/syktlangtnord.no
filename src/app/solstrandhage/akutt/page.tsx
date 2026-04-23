@@ -1,32 +1,23 @@
 import Link from "next/link";
+import { listRecords } from "@/lib/airtable";
 
 export const metadata = { title: "Akutt og beredskap" };
+export const revalidate = 600;
+
+type KontaktFields = {
+  Navn?: string;
+  Telefon?: string;
+  Beskrivelse?: string;
+  Kategori?: "Sameiet" | "Leverandør" | "Forsikring";
+  Sortering?: number;
+  Vises?: boolean;
+};
 
 const emergencyContacts = [
   { label: "Brann", number: "110" },
   { label: "Politi", number: "112" },
   { label: "Ambulanse / medisinsk nødhjelp", number: "113" },
   { label: "Legevakt Tromsø", number: "116 117" },
-];
-
-const otherContacts = [
-  {
-    label: "Styreleder",
-    name: "Daniel Sierra Polanco",
-    number: "[telefon — fylles inn]",
-  },
-  {
-    label: "Forretningsfører (Bonord) — kundesenter",
-    number: "[fylles inn]",
-  },
-  {
-    label: "Fremtind Forsikring — skademelding",
-    number: "915 03 100",
-  },
-  {
-    label: "Brøytefirma",
-    number: "[fylles inn]",
-  },
 ];
 
 const incidents = [
@@ -58,7 +49,24 @@ const incidents = [
   },
 ];
 
-export default function AkuttPage() {
+async function getKontakter() {
+  try {
+    const records = await listRecords<KontaktFields>("Kontakter");
+    return records
+      .filter((r) => r.fields.Vises !== false && r.fields.Navn)
+      .sort(
+        (a, b) =>
+          (a.fields.Sortering ?? 999) - (b.fields.Sortering ?? 999),
+      );
+  } catch (err) {
+    console.error("Failed to load Kontakter:", err);
+    return [];
+  }
+}
+
+export default async function AkuttPage() {
+  const kontakter = await getKontakter();
+
   return (
     <div className="mx-auto max-w-4xl px-6 pt-12 pb-24">
       <p className="text-sm uppercase tracking-widest text-alert mb-4">
@@ -95,35 +103,39 @@ export default function AkuttPage() {
         </div>
       </section>
 
-      <section className="mt-10">
-        <h2 className="font-serif text-2xl tracking-tight text-foreground mb-4">
-          Sameiet og leverandører
-        </h2>
-        <div className="rounded-lg border border-foreground/10 bg-surface overflow-hidden">
-          {otherContacts.map((c, i) => (
-            <div
-              key={c.label}
-              className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 px-5 py-4 ${
-                i > 0 ? "border-t border-foreground/10" : ""
-              }`}
-            >
-              <div>
-                <p className="text-foreground/80">{c.label}</p>
-                {c.name && (
-                  <p className="text-sm text-foreground/60">{c.name}</p>
-                )}
+      {kontakter.length > 0 && (
+        <section className="mt-10">
+          <h2 className="font-serif text-2xl tracking-tight text-foreground mb-4">
+            Sameiet og leverandører
+          </h2>
+          <div className="rounded-lg border border-foreground/10 bg-surface overflow-hidden">
+            {kontakter.map((k, i) => (
+              <div
+                key={k.id}
+                className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 px-5 py-4 ${
+                  i > 0 ? "border-t border-foreground/10" : ""
+                }`}
+              >
+                <div>
+                  <p className="text-foreground/80">{k.fields.Navn}</p>
+                  {k.fields.Beskrivelse && (
+                    <p className="text-sm text-foreground/60">
+                      {k.fields.Beskrivelse}
+                    </p>
+                  )}
+                </div>
+                <span className="text-foreground font-mono text-sm tabular-nums">
+                  {k.fields.Telefon || "—"}
+                </span>
               </div>
-              <span className="text-foreground font-mono text-sm tabular-nums">
-                {c.number}
-              </span>
-            </div>
-          ))}
-        </div>
-        <p className="mt-3 text-xs text-foreground/50">
-          Ved publisering: telefonnumre fylles inn av styret. Kontaktene blir på
-          sikt hentet automatisk fra Airtable så de alltid stemmer.
-        </p>
-      </section>
+            ))}
+          </div>
+          <p className="mt-3 text-xs text-foreground/50">
+            Kontakter hentes fra Airtable. Styret kan oppdatere dem direkte
+            der — endringer vises på siden i løpet av 10 minutter.
+          </p>
+        </section>
+      )}
 
       <section className="mt-12">
         <h2 className="font-serif text-2xl tracking-tight text-foreground mb-4">
