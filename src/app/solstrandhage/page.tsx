@@ -11,6 +11,7 @@ type HendelseFields = {
   Sted?: string;
   Beskrivelse?: string;
   Vises?: boolean;
+  "Skjul dato"?: boolean;
 };
 
 const TYPE_BADGE: Record<string, string> = {
@@ -77,11 +78,19 @@ async function getKommendeHendelser() {
           r.fields.Dato >= today,
       )
       .sort((a, b) => (a.fields.Dato ?? "").localeCompare(b.fields.Dato ?? ""))
-      .slice(0, 4);
+      .slice(0, 5);
   } catch (err) {
     console.error("Failed to load Hendelser:", err);
     return [];
   }
+}
+
+function formatTimeLabel(h: HendelseFields): string {
+  if (h["Skjul dato"]) {
+    return h.Tidspunkt || "Kommer";
+  }
+  const datoStr = formatDato(h.Dato!);
+  return h.Tidspunkt ? `${datoStr} · ${h.Tidspunkt}` : datoStr;
 }
 
 export default async function Home() {
@@ -158,8 +167,7 @@ export default async function Home() {
                     </span>
                   )}
                   <span className="text-sm text-foreground/70 tabular-nums">
-                    {formatDato(h.fields.Dato!)}
-                    {h.fields.Tidspunkt ? ` · ${h.fields.Tidspunkt}` : ""}
+                    {formatTimeLabel(h.fields)}
                   </span>
                 </div>
                 <h3 className="font-serif text-lg tracking-tight text-foreground mb-1">

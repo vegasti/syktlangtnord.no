@@ -57,8 +57,10 @@ export default async function VedlikeholdPage() {
         Vedlikehold og planer
       </h1>
       <p className="mt-6 text-lg text-foreground/80 max-w-2xl animate-fade-in-up [animation-delay:80ms]">
-        Tidslinje over hva som er gjort og hva som er planlagt. Pågående og
-        planlagte tiltak vises øverst, deretter historikk med nyeste først.
+        Historikk og planer for større vedlikeholdstiltak. Brukes når styret
+        har konkrete tiltak å rapportere — for de tilbakevendende oppgavene,
+        se{" "}
+        <Link href="/solstrandhage/hms#arshjul">årshjulet på HMS-siden</Link>.
       </p>
 
       <section className="mt-12">
