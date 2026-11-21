@@ -163,6 +163,7 @@ footer b{color:var(--fg)}
 <script src="runde2-a.js"></script>
 <script src="runde2-b.js"></script>
 <script>if(location.search.includes('kompakt'))document.body.classList.add('kompakt');RB.start({maks:40})</script>
-<a href="index.html" style="position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:99;font:500 13px Geist,system-ui,sans-serif;background:#15291f;color:#f5f0eb;padding:9px 15px;border-radius:999px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.25)">&larr; Til presentasjonen</a>
+<a href="index.html#runde2" style="position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:99;font:500 13px Geist,system-ui,sans-serif;background:#15291f;color:#f5f0eb;padding:9px 15px;border-radius:999px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.25)">&larr; Til presentasjonen</a>
+<script>/* Hopp til forslaget i adressen (#f07) når lista er bygd. */if(location.hash){const hopp=()=>{const e=document.querySelector(location.hash);if(!e)return false;scrollTo({top:e.getBoundingClientRect().top+scrollY-70,behavior:"instant"});return true};let i=0;const t=setInterval(()=>{if(hopp()||++i>60){clearInterval(t);setTimeout(hopp,900)}},150)}</script>
 </body>
 </html>
