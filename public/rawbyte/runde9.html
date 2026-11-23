@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Rawbyte ikon og logo, runde 9: raw står, byte får leke.">
+<title>Rawbyte · runde 9 · byte får leke</title>
+<link rel="stylesheet" href="https://use.typekit.net/sbv2wli.css">
+<style>
+:root{--krem:#f5f0eb;--sand:#eae1da;--kort:#fbf8f4;--fg:#1d1d1f;--svak:#6f6a64;--linje:rgba(29,29,31,.1);--gronn:#325f4e;--dyp:#1f3d32;--mint:#a0d2b9;--meno:meno-banner,Georgia,serif;--fut:futura-pt,Futura,"Century Gothic",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--krem);color:var(--fg);font:400 17px/1.55 var(--fut);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--meno);font-weight:900;margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+svg{display:block}
+.logo9,.la9,.ik9{overflow:visible}
+.ik9{overflow:hidden}
+.inn{max-width:1320px;margin:0 auto;padding:0 28px}
+.merke{font:600 11.5px var(--fut);letter-spacing:.16em;text-transform:uppercase}
+@keyframes vekt9{0%,100%{font-weight:300}50%{font-weight:700}}
+.vk9{animation:vekt9 1.8s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.vk9{animation:none}}
+
+/* Hero */
+.hero{background:linear-gradient(165deg,#2f5b4b,#1f3d32);color:var(--krem);padding:64px 0 54px}
+.hero .merke{color:rgba(245,240,235,.6)}
+.hero .merke a{text-underline-offset:3px}
+.hero h1{font-size:clamp(46px,7vw,104px);line-height:.95;margin:16px 0 22px}
+.hero h1 em{font:600 .86em var(--fut);font-style:normal;color:var(--mint);letter-spacing:-.02em}
+.hero p.led{max-width:64ch;font-size:19px;color:rgba(245,240,235,.84)}
+.regler{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.regler span{border:1px solid rgba(245,240,235,.22);border-radius:999px;padding:5px 13px;font-size:14.5px;color:rgba(245,240,235,.86)}
+.alle{margin-top:40px;display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:10px}
+.alle a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 6px 11px;border-radius:16px;background:rgba(0,0,0,.16);text-decoration:none;transition:background .2s,transform .2s}
+.alle a:hover{background:rgba(0,0,0,.3);transform:translateY(-2px)}
+.alle svg{width:52px;height:52px}
+.alle b{font:600 12px var(--fut);letter-spacing:.06em;color:rgba(245,240,235,.6)}
+.alle span{font-size:13px;line-height:1.2;text-align:center;color:rgba(245,240,235,.9)}
+
+/* Indeks */
+.indeks{position:sticky;top:0;z-index:5;background:rgba(245,240,235,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--linje)}
+.indeks .inn{display:flex;gap:4px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.indeks a{flex:none;text-decoration:none;font-size:14.5px;padding:6px 13px;border-radius:999px;color:var(--svak)}
+.indeks a:hover{background:rgba(29,29,31,.06);color:var(--fg)}
+
+section{padding:64px 0 10px}
+.sek-hode{margin-bottom:26px;max-width:70ch}
+.sek-hode .merke{color:var(--gronn)}
+.sek-hode h2{font-size:clamp(30px,3.6vw,48px);line-height:1.05;margin:8px 0 10px}
+.sek-hode p{color:var(--svak)}
+
+/* I bruk */
+.velger{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.velger button{font:500 14px var(--fut);border:1px solid var(--linje);background:var(--kort);border-radius:999px;padding:5px 12px;cursor:pointer;color:var(--svak)}
+.velger button[aria-pressed=true]{background:var(--dyp);color:var(--krem);border-color:var(--dyp)}
+.mocker{display:grid;grid-template-columns:1.5fr 1.1fr .8fr;gap:16px;align-items:stretch}
+.mock{border-radius:22px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.m-app{background:#1b1c1e;color:#e9e6e1;box-shadow:0 18px 40px rgba(31,61,50,.18)}
+.m-tb{display:flex;align-items:center;gap:9px;padding:10px 14px;font-size:13.5px;color:#b9b5af;border-bottom:1px solid rgba(255,255,255,.07)}
+.m-tb svg{width:18px;height:18px}
+.m-tb i{margin-left:auto;display:flex;gap:14px;font-style:normal;opacity:.5;font-size:12px;letter-spacing:.2em}
+.m-body{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:14px;min-height:170px}
+.m-body span{border-radius:8px;background:linear-gradient(140deg,#2e3033,#25272a);aspect-ratio:3/2}
+.m-body span:nth-child(-n+3){background:linear-gradient(140deg,#3b6d5a,#2c5545)}
+.m-status{display:flex;align-items:center;gap:10px;padding:9px 14px;font-size:13.5px;background:#161719;border-top:1px solid rgba(255,255,255,.07)}
+.m-status em{margin-left:auto;font-style:normal;color:#8d8a85}
+.m-linje{display:flex;align-items:center;justify-content:center;gap:12px;padding:8px;background:#202020}
+.m-linje span{width:26px;height:26px;border-radius:7px;background:#3a3a3c}
+.m-linje u{position:relative;display:block;text-decoration:none;padding:5px 7px;border-radius:7px;background:rgba(255,255,255,.08)}
+.m-linje u::after{content:"";position:absolute;left:50%;bottom:1px;width:14px;height:3px;border-radius:2px;background:#8fd0b0;transform:translateX(-50%)}
+.m-opp{background:var(--kort);border:1px solid var(--linje);padding:20px}
+.m-opp h4{font:900 21px var(--meno);margin:0 0 4px}
+.m-opp>p{font-size:14px;color:var(--svak);margin-bottom:12px}
+.fil{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--linje);font-size:15px}
+.fil .mini{flex:none;width:38px;height:28px;border-radius:6px;background:linear-gradient(140deg,#cfc4b8,#e6ddd3)}
+.fil div{min-width:0;flex:1}
+.fil b{display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fil small{color:var(--svak);font-size:13px}
+.fil .st{flex:none;width:26px;display:grid;place-items:center}
+.fil.ko{opacity:.5}
+.m-tlf{background:linear-gradient(170deg,#2f5b4b,#1f3d32);color:var(--krem);padding:22px 18px;align-items:center;text-align:center;justify-content:space-between;gap:18px;border:6px solid #15291f;border-radius:34px}
+.m-tlf .lg{font-size:26px}
+.m-tlf .stor svg{width:112px;height:112px}
+.m-tlf b{display:block;font:900 22px var(--meno)}
+.m-tlf small{color:rgba(245,240,235,.7);font-size:14px}
+
+/* Kort */
+.kortene{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.kort{background:var(--kort);border:1px solid var(--linje);border-radius:26px;padding:22px;display:flex;flex-direction:column;gap:14px;min-width:0;box-shadow:0 1px 0 #fff inset,0 10px 30px rgba(31,61,50,.06)}
+.kort header{display:flex;gap:14px;align-items:flex-start}
+.kort .nr{flex:none;font:600 13px var(--fut);letter-spacing:.08em;background:var(--dyp);color:var(--krem);border-radius:999px;padding:4px 11px;margin-top:5px}
+.kort h3{font-size:29px;line-height:1.1}
+.kort header p{color:var(--svak);font-size:16px;margin-top:3px}
+.kort header button{margin-left:auto;flex:none;font:500 13.5px var(--fut);border:1px solid var(--linje);background:none;border-radius:999px;padding:5px 12px;cursor:pointer;color:var(--svak);white-space:nowrap}
+.kort header button:hover{color:var(--fg);border-color:rgba(29,29,31,.3)}
+.flater{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.flate{position:relative;border-radius:18px;padding:44px 20px 24px;display:flex;align-items:center;gap:22px;min-width:0;min-height:216px}
+.flate>i{position:absolute;top:14px;left:17px;font:600 10.5px var(--fut);font-style:normal;letter-spacing:.16em;text-transform:uppercase;opacity:.62}
+.flate.gr{background:linear-gradient(160deg,#386856,#2a5142);color:var(--krem)}
+.flate.jobb{background:linear-gradient(160deg,#27493c,#1a3229)}
+.flate .ik{flex:none;width:38%;max-width:128px;filter:drop-shadow(0 10px 18px rgba(0,0,0,.28))}
+.flate .ik svg{width:100%;height:auto}
+.flate .lg{font-size:clamp(26px,2.5vw,37px);min-width:0}
+.rad2{display:grid;grid-template-columns:1.25fr 1fr;gap:10px}
+.flate.ly{background:var(--krem);border:1px solid var(--linje);min-height:0;padding:22px 20px;gap:1.1em;font-size:clamp(22px,2vw,30px);align-items:center}
+.flate.ly img{width:auto;display:block}
+.flate.ly .lg{font-size:inherit}
+.flate.ly .skille{align-self:stretch;width:1px;background:var(--linje)}
+.smaa{border-radius:18px;background:#1b1c1e;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+.smaa div{display:flex;align-items:flex-end;gap:14px}
+.smaa .bar{padding-top:12px;border-top:1px solid rgba(255,255,255,.08)}
+.notat{font-size:15.5px;color:#4a4641}
+.notat b{font-weight:600;color:var(--fg)}
+.notat span{display:block;color:var(--svak);margin-top:2px}
+
+footer{padding:60px 0 80px;color:var(--svak)}
+footer p{max-width:70ch}
+footer b{color:var(--fg)}
+
+@media (max-width:1100px){.kortene{grid-template-columns:1fr}.mocker{grid-template-columns:1fr 1fr}.m-tlf{grid-column:1/-1}.alle{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media (max-width:640px){
+  .inn{padding:0 16px}
+  .hero{padding:44px 0 36px}
+  .alle{grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+  .alle span{font-size:11.5px}
+  .mocker{grid-template-columns:1fr}
+  .flater,.rad2{grid-template-columns:1fr}
+  .flate{min-height:180px}
+  .kort{padding:16px;border-radius:22px}
+  .kort header{flex-wrap:wrap}
+  .kort header button{margin-left:0}
+  .kort h3{font-size:25px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inn">
+    <p class="merke">Rawbyte · ikon og logo · runde 9 · <a href="runde8.html">← runde 8</a></p>
+    <h1>raw står. <em>byte</em> får leke.</h1>
+    <p class="led">Tjue nye forslag, 133–152. «raw» er satt som i Raw Studios-logoen og røres ikke. «byte» står i Futura, så den tynne y-en fra Meno er borte. All leken ligger i «byte», og hvert forslag har to tilstander: slik det ser ut i ro, og slik det beveger seg når appen jobber, laster opp eller transkriberer.</p>
+    <div class="regler"><span>raw · Meno Banner Black</span><span>byte · Futura PT Demi</span><span>Samme x-høyde</span><span>Bygd som Raw Studios-logoen</span></div>
+    <div class="alle" id="alle"></div>
+  </div>
+</header>
+
+<nav class="indeks" aria-label="Innhold"><div class="inn" id="indeks"></div></nav>
+
+<main>
+  <section id="bruk"><div class="inn">
+    <div class="sek-hode"><p class="merke">I bruk</p><h2>Slik ser den ut når noe jobber</h2><p>Velg et nummer. Den samme lasteren står i statuslinja i desktop-appen, ved fila som lastes opp og midt på skjermen i mobilappen. Ikonet i oppgavelinja beveger seg også.</p></div>
+    <div class="velger" id="velger"></div>
+    <div class="mocker">
+      <div class="mock m-app">
+        <div class="m-tb"><span id="mIk"></span>Rawbyte<i>— ▢ ✕</i></div>
+        <div class="m-body"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="m-status"><span id="mSt"></span>Eksporterer 12 av 48<em>3 min igjen</em></div>
+        <div class="m-linje"><span></span><span></span><u id="mLinje"></u><span></span><span></span></div>
+      </div>
+      <div class="mock m-opp">
+        <h4>Laster opp 3 filer</h4><p>Til mappa Tromsø Havn</p>
+        <div class="fil"><span class="mini"></span><div><b>havna-drone-01.mp4</b><small>Ferdig · 1,2 GB</small></div><span class="st"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#3f9a76" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></span></div>
+        <div class="fil"><span class="mini"></span><div><b>intervju-havnesjef.mov</b><small>Laster opp · 64 %</small></div><span class="st" id="mOpp"></span></div>
+        <div class="fil ko"><span class="mini"></span><div><b>kaia-kveld-04.cr3</b><small>I kø</small></div><span class="st"></span></div>
+      </div>
+      <div class="mock m-tlf">
+        <div class="lg" id="mLogo"></div>
+        <div class="stor" id="mTlf"></div>
+        <div><b>Transkriberer</b><small>intervju-havnesjef.mov · 4 min igjen</small></div>
+      </div>
+    </div>
+  </div></section>
+  <div id="spor"></div>
+</main>
+
+<footer><div class="inn">
+  <p><b>Si hvilke nummer som har noe.</b> Det trenger ikke være ett: en hvileform fra ett forslag og en bevegelse fra et annet kan settes sammen. Når retningen er valgt, tegnes den ferdig som rene vektorstier, med ikonsett, lys og mørk utgave og lasteren som en ferdig komponent til appene.</p>
+  <p style="margin-top:14px"><a href="runde8.html">Runde 8</a> · <a href="index.html">7 og presentasjonen</a> · <a href="runde6.html">6</a> · <a href="runde5.html">5</a> · <a href="runde4.html">4</a> · <a href="runde3.html">3</a> · <a href="runde2.html">2</a> · <a href="runde1.html">1</a></p>
+</div></footer>
+
+<script src="runde9.js"></script>
+<script>
+const SPOR = {
+  A: ['Biten ved siden av', 'Ordet står helt, og får én ting ved siden av seg: en bit, en markør, åtte ruter eller klammer.'],
+  B: ['Inni bokstavene', 'Futura er bygd av sirkler og rette streker. Her bor leken i formene som alt finnes: hullet i b-en, sirkelen i e-en, kløfta i y-en og stammen på b-en.'],
+  C: ['Ordet er måleren', '«byte» viser selv hvor langt jobben har kommet, som nivå, blokk, ramme eller strek.'],
+  D: ['Ordet i lav oppløsning', 'Videre fra 61: «byte» er tegnet i piksler, linjer, søyler eller raster, og skjerpes eller beveger seg når noe skjer.'],
+  E: ['Bevegelsen', 'Her er hvileformen enklere, og særpreget ligger mest i hvordan ordet beveger seg.'] };
+R9.klar().then(() => {
+  const K = R9.konsepter, $ = id => document.getElementById(id);
+  $('alle').innerHTML = K.map(k => `<a href="#f${k.nr}">${R9.laster(k, { px: 52 })}<b>${k.nr}</b><span>${k.navn}</span></a>`).join('');
+  $('indeks').innerHTML = `<a href="#bruk">I bruk</a>` + Object.entries(SPOR).map(([s, [navn]]) => { const f = K.filter(k => k.spor === s); return `<a href="#spor${s}">${navn} · ${f[0].nr}–${f[f.length - 1].nr}</a>`; }).join('');
+  const rsH = (112.69 / 28.17 * R9.xM()).toFixed(3);
+  const kort = k => `<article class="kort" id="f${k.nr}">
+    <header><span class="nr">${k.nr}</span><div><h3>${k.navn}</h3><p>${k.ide}</p></div><button data-bruk="${k.nr}">Se i bruk</button></header>
+    <div class="flater">
+      <div class="flate gr"><i>I ro</i><div class="ik">${R9.ikon(k)}</div><div class="lg">${R9.logo(k)}</div></div>
+      <div class="flate gr jobb"><i>Jobber</i><div class="ik">${R9.ikon(k, { anim: 1 })}</div><div class="lg">${R9.logo(k, { anim: 1 })}</div></div>
+    </div>
+    <div class="rad2">
+      <div class="flate ly"><img src="rawstudios-logo.svg" alt="Raw Studios" style="height:${rsH}em"><span class="skille"></span><div class="lg">${R9.logo(k, { tema: 'lys' })}</div></div>
+      <div class="smaa"><div>${[48, 24, 16].map(px => R9.laster(k, { px })).join('')}</div><div class="bar">${[48, 32, 24, 16].map(px => R9.ikon(k, { px })).join('')}</div></div>
+    </div>
+    <p class="notat"><b>Jobber:</b> ${k.jobb}${k.svak ? `<span><b>Svakhet:</b> ${k.svak}</span>` : ''}</p>
+  </article>`;
+  $('spor').innerHTML = Object.entries(SPOR).map(([s, [navn, tekst]]) => { const f = K.filter(k => k.spor === s);
+    return `<section id="spor${s}"><div class="inn"><div class="sek-hode"><p class="merke">Spor ${s} · ${f[0].nr}–${f[f.length - 1].nr}</p><h2>${navn}</h2><p>${tekst}</p></div><div class="kortene">${f.map(kort).join('')}</div></div></section>`; }).join('');
+
+  $('velger').innerHTML = K.map(k => `<button data-bruk="${k.nr}" aria-pressed="false">${k.nr} · ${k.navn}</button>`).join('');
+  const visBruk = nr => { const k = K.find(x => x.nr == nr); if (!k) return;
+    document.querySelectorAll('#velger button').forEach(b => b.setAttribute('aria-pressed', b.dataset.bruk == nr));
+    $('mIk').innerHTML = R9.ikon(k, { px: 18 }); $('mSt').innerHTML = R9.laster(k, { px: 20 }); $('mLinje').innerHTML = R9.ikon(k, { px: 30, anim: 1 });
+    $('mOpp').innerHTML = R9.laster(k, { px: 24, lys: 1 }); $('mTlf').innerHTML = R9.laster(k, { px: 112 }); $('mLogo').innerHTML = R9.logo(k); };
+  document.addEventListener('click', e => { const b = e.target.closest('[data-bruk]'); if (!b) return; visBruk(b.dataset.bruk); if (b.closest('.kort')) $('bruk').scrollIntoView(); });
+  visBruk(137);
+
+  /* Bare det som er på skjermen, beveger seg */
+  const io = new IntersectionObserver(es => es.forEach(e => { try { e.isIntersecting ? e.target.unpauseAnimations() : e.target.pauseAnimations(); } catch (_) {} }), { rootMargin: '200px' });
+  document.querySelectorAll('#spor svg.an').forEach(s => io.observe(s));
+});
+</script>
+</body>
+</html>
