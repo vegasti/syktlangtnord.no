@@ -15,7 +15,11 @@ const cx = cv.getContext('2d', { willReadFrequently: true });
 const fnt = (f, s) => `${f.st || 'normal'} ${f.w} ${s}px ${PM.FAM[f.fam]}`;
 const adv = (t, f) => { cx.font = fnt(f, 1000); return cx.measureText(t).width / 1000; };
 /* Hvor hver bokstav starter (em), med kerning og eventuell sperring */
-const pos = (t, f) => [...t].map((c, i) => adv(t.slice(0, i + 1), f) - adv(c, f) + i * (f.spr || 0));
+/* «raw» i Raw Studios-logoen er sperret for hånd. Venstre blekkant per bokstav, målt i logo-fila (x-høyde 28,17): r 0 · a 26,9 · w 54 */
+const RS_RAW = [0, 26.9, 54], RS_XH = 28.17;
+const pos = (t, f) => { if (t === 'raw' && f.fam === 'meno' && f.w === 900 && !f.st) { const n = 'rawpos'; if (buf[n]) return buf[n];
+    const k = xh(f) / RS_XH, l = c => blekk(c, f).l; return buf[n] = [...t].map((c, i) => l('r') + RS_RAW[i] * k - l(c)); }
+  return [...t].map((c, i) => adv(t.slice(0, i + 1), f) - adv(c, f) + i * (f.spr || 0)); };
 const buf = {};
 const tegnOrd = (t, f) => { const p = pos(t, f); cx.clearRect(0, 0, NW, NH); cx.font = fnt(f, F); cx.fillStyle = '#000'; [...t].forEach((c, i) => cx.fillText(c, OX + p[i] * F, OY)); return cx.getImageData(0, 0, NW, NH).data; };
 /* Blekket til et ord i em fra origo (y negativ oppover) */
