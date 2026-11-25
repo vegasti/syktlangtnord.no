@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Rawbyte ikon og logo, runde 10: ren sats og én liten detalj.">
+<title>Rawbyte · runde 10 · ren sats</title>
+<link rel="stylesheet" href="https://use.typekit.net/sbv2wli.css">
+<style>
+:root{--krem:#f5f0eb;--sand:#eae1da;--kort:#fbf8f4;--fg:#1d1d1f;--svak:#6f6a64;--linje:rgba(29,29,31,.1);--gronn:#325f4e;--dyp:#1f3d32;--mint:#a0d2b9;--meno:meno-banner,Georgia,serif;--fut:futura-pt,Futura,"Century Gothic",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--krem);color:var(--fg);font:400 18px/1.55 var(--fut);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--meno);font-weight:900;margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+a{color:inherit;text-underline-offset:3px}
+svg{display:block}
+.inn{max-width:1180px;margin:0 auto;padding:0 28px}
+.merke{font:500 12px var(--fut);letter-spacing:.18em;text-transform:uppercase;color:var(--svak)}
+
+.hero{padding:96px 0 40px}
+.hero h1{font-size:clamp(44px,6.4vw,92px);line-height:.98;margin:22px 0 26px}
+.hero p{max-width:58ch;font-size:20px;color:#3a3835}
+.regler{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--linje)}
+.regler li{padding:16px 22px 0 0;font-size:16.5px;color:var(--svak)}
+.regler b{display:block;font-weight:500;color:var(--fg)}
+
+section{padding:70px 0 0}
+.sek-hode{max-width:60ch;margin-bottom:34px}
+.sek-hode h2{font-size:clamp(30px,3.4vw,46px);line-height:1.05;margin:10px 0 10px}
+.sek-hode p{color:var(--svak)}
+
+.forslag{padding:34px 0 46px;border-top:1px solid var(--linje)}
+.f-hode{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:10px 40px;align-items:baseline;margin-bottom:24px}
+.f-hode h3{font-size:34px;line-height:1.05;margin-top:6px}
+.f-hode p{color:#3a3835}
+.f-hode p+p{margin-top:6px}
+.f-hode .svak{color:var(--svak);font-size:16px}
+.flater{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.flate{border-radius:18px;min-height:300px;display:flex;align-items:center;justify-content:center;padding:44px 34px;min-width:0}
+.flate.gr{background:linear-gradient(165deg,#34634f,#27493b)}
+.flate.ly{background:var(--kort);border:1px solid var(--linje);gap:34px}
+.flate.ly img{flex:none}
+.flate.ly .skille{flex:none;width:1px;align-self:stretch;margin:26px 0;background:var(--linje)}
+.bruk{display:grid;grid-template-columns:1.1fr 1.3fr 1fr;gap:14px;margin-top:14px}
+.bruk.med-laster{grid-template-columns:1.1fr 1.3fr 1fr .8fr}
+.celle{border-radius:18px;background:var(--kort);border:1px solid var(--linje);padding:18px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.celle>.merke{font-size:11px}
+.ikoner{flex:1;display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.ikoner figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;color:var(--svak)}
+.linje{border-radius:10px;background:#1b1c1e;color:#b9b5af;display:flex;align-items:center;gap:20px;padding:0 16px;height:56px;font-size:14px;overflow:hidden}
+.linje .lg10{flex:none}
+.linje span:last-child{margin-left:auto;display:flex;align-items:center;gap:8px;color:#8d8a85;white-space:nowrap}
+.vindu{flex:1;display:flex;flex-direction:column;gap:8px}
+.vindu .ruter{flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:6px;min-height:54px}
+.vindu .ruter i{border-radius:6px;background:var(--sand)}
+.logginn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:8px 0}
+.logginn .felt{width:100%;max-width:220px;border:1px solid var(--linje);border-radius:9px;padding:8px 12px;font-size:14px;color:var(--svak);background:#fff}
+.logginn .knapp{width:100%;max-width:220px;border-radius:9px;padding:8px 12px;font:500 14px var(--fut);text-align:center;background:var(--dyp);color:var(--krem)}
+.celle.last{background:linear-gradient(165deg,#34634f,#27493b);border:0;color:rgba(245,240,235,.8);cursor:pointer}
+.celle.last .merke{color:rgba(245,240,235,.6)}
+.celle.last .midt{flex:1;display:flex;align-items:center;justify-content:center}
+.celle.last small{font-size:13.5px;line-height:1.35}
+
+.spm{margin:80px 0 0;padding:54px 0 90px;border-top:1px solid var(--linje)}
+.spm h2{font-size:clamp(30px,3.4vw,46px);line-height:1.08;max-width:22ch}
+.spm p{margin-top:16px;color:var(--svak);max-width:56ch}
+.fot{padding:0 0 60px;font-size:15px;color:var(--svak)}
+
+@media (max-width:900px){
+  .inn{padding:0 16px}
+  .hero{padding:56px 0 20px}
+  .regler{grid-template-columns:1fr}
+  .f-hode{grid-template-columns:1fr}
+  .flater,.bruk,.bruk.med-laster{grid-template-columns:1fr}
+  .flate{min-height:220px;padding:48px 24px}
+  .flate.gr .lg10{max-height:190px;width:auto}
+  .flate.ly{gap:36px;flex-direction:column;align-items:flex-start;padding-left:34px}
+  .flate.ly>*{flex:none}
+  .flate.ly .skille{width:auto;height:1px;margin:0;align-self:stretch}
+}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="inn">
+  <p class="merke">Rawbyte · logo og ikon · runde 10</p>
+  <h1>Ren sats. Én liten detalj.</h1>
+  <p>Runde 9 lekte for mye. Denne runden er bygd slik Raw Studios- og trykt.no-logoene er bygd: små bokstaver, én farge, mye luft. Seks forslag. Tre er bare sats. Tre har én liten detalj, slik punktumet i trykt.no er et passmerke.</p>
+  <ul class="regler">
+    <li><b>«raw» er urørt</b>Meno Black, sperret som i Raw Studios-logoen.</li>
+    <li><b>«byte» er Futura</b>Lys eller liten, aldri like tung som «raw».</li>
+    <li><b>Lasteren er en egen del</b>Den bor i appen, ikke i logoen.</li>
+  </ul>
+</div></header>
+
+<main class="inn">
+  <section id="sats">
+    <div class="sek-hode"><p class="merke">153–155</p><h2>Bare sats</h2><p>Ingen symboler og ingen farge. Forskjellen ligger i hvordan «byte» er satt.</p></div>
+    <div id="l-sats"></div>
+  </section>
+  <section id="detalj">
+    <div class="sek-hode"><p class="merke">156–158</p><h2>Én detalj</h2><p>Samme sats, pluss ett lite tegn i mint. Tegnet er valgt så det gjelder alt Rawbyte gjør: lagring, programvare og redigering. Lasteren er det samme tegnet i bevegelse.</p></div>
+    <div id="l-detalj"></div>
+  </section>
+
+  <div class="spm">
+    <p class="merke">Til Frida</p>
+    <h2>Hvilken er nærmest? Og hva er det ene som skurrer?</h2>
+    <p>Ett nummer og én setning holder. Da tegner vi den ene videre for hånd.</p>
+  </div>
+  <p class="fot">Tidligere: <a href="runde9.html">runde 9</a> · <a href="runde8.html">runde 8</a> · <a href="index.html">runde 7 og presentasjonen</a></p>
+</main>
+
+<script src="runde10.js"></script>
+<script>
+const LASTERTEKST = { linja: 'Streken fylles.', markor: 'Markøren blinker.', punkt: 'Punktet puster.' };
+const STATUS = { linja: '3 av 12', markor: 'Transkriberer', punkt: 'Lagrer' };
+function kort(k) {
+  const rsH = 30 * 112.69 / 28.17;
+  const liten = k.laster ? R10.laster(k.laster, { tema: 'mork', px: 20 }) : '';
+  return `<article class="forslag" id="f${k.nr}">
+    <div class="f-hode">
+      <div><p class="merke">${k.nr}</p><h3>${k.navn}</h3></div>
+      <div><p>${k.ide}</p>${k.betyr ? `<p>${k.betyr}</p>` : ''}<p class="svak">Svakhet: ${k.svak}</p></div>
+    </div>
+    <div class="flater">
+      <div class="flate gr">${R10.logo(k, { tema: 'gronn', xpx: 50, maksH: 220 })}</div>
+      <div class="flate ly"><img src="rawstudios-logo.svg" alt="Raw Studios" height="${rsH.toFixed(0)}"><span class="skille"></span>${R10.logo(k, { tema: 'lys', xpx: 30, maksH: 190 })}</div>
+    </div>
+    <div class="bruk${k.laster ? ' med-laster' : ''}">
+      <div class="celle"><p class="merke">Appikon</p><div class="ikoner">${[96, 48, 32, 16].map(px => `<figure>${R10.ikon(k, { px })}<span>${px}</span></figure>`).join('')}</div></div>
+      <div class="celle"><p class="merke">I appen</p><div class="vindu"><div class="linje">${R10.logo(k, { tema: 'mork', h: 30 })}<span>Filer</span>${k.laster ? '' : '<span>Opprett</span>'}<span>${liten}${k.laster ? STATUS[k.laster] : ''}</span></div><div class="ruter"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+      <div class="celle"><p class="merke">Innlogging</p><div class="logginn">${R10.logo(k, { tema: 'lys', xpx: 20 })}<div class="felt">E-post</div><div class="knapp">Send kode</div></div></div>
+      ${k.laster ? `<div class="celle last" data-spill><p class="merke">Lasteren</p><div class="midt">${R10.laster(k.laster, { px: 84 })}</div><small>${LASTERTEKST[k.laster]} Hold pekeren over, eller trykk.</small></div>` : ''}
+    </div>
+  </article>`;
+}
+R10.klar().then(() => {
+  for (const g of ['sats', 'detalj']) document.getElementById('l-' + g).innerHTML = R10.konsepter.filter(k => k.gruppe === g).map(kort).join('');
+  /* Alt står stille til noen ber om bevegelse */
+  const stille = s => { s.pauseAnimations(); s.setCurrentTime(.65); };
+  document.querySelectorAll('svg.la10').forEach(stille);
+  document.querySelectorAll('[data-spill]').forEach(el => { const s = el.querySelector('svg.la10'); let gaar = false;
+    const sett = v => { gaar = v; if (v) { s.setCurrentTime(0); s.unpauseAnimations(); } else stille(s); };
+    el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') sett(true); });
+    el.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') sett(false); });
+    el.addEventListener('click', e => { if (!matchMedia('(hover:hover)').matches) sett(!gaar); }); });
+  document.documentElement.dataset.klar = '1';
+});
+</script>
+</body>
+</html>
